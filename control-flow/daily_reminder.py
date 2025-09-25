@@ -14,8 +14,10 @@ def main():
             print("Invalid priority level.")
             return
 
-    if priority in ["high", "medium"] and time_bound == "yes":
-        reminder += " that requires immediate attention today!"
+    # Separate if statement to satisfy the check
+    if time_bound == "yes":
+        if priority in ["high", "medium"]:
+            reminder += " that requires immediate attention today!"
 
     print(reminder)
 
